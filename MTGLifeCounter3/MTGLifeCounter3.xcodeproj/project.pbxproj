@@ -13,6 +13,8 @@
 		D3324E0322AB345600F000F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3324E0222AB345600F000F1 /* Assets.xcassets */; };
 		D3324E0622AB345600F000F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3324E0522AB345600F000F1 /* Preview Assets.xcassets */; };
 		D3324E0922AB345600F000F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3324E0722AB345600F000F1 /* LaunchScreen.storyboard */; };
+		D3324E1122AC8E1D00F000F1 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3324E1022AC8E1D00F000F1 /* DataStore.swift */; };
+		D3324E1322AC8F2B00F000F1 /* MtgColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3324E1222AC8F2B00F000F1 /* MtgColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D3324E0522AB345600F000F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3324E0822AB345600F000F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3324E0A22AB345600F000F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3324E1022AC8E1D00F000F1 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		D3324E1222AC8F2B00F000F1 /* MtgColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtgColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				D3324E0722AB345600F000F1 /* LaunchScreen.storyboard */,
 				D3324E0A22AB345600F000F1 /* Info.plist */,
 				D3324E0422AB345600F000F1 /* Preview Content */,
+				D3324E1022AC8E1D00F000F1 /* DataStore.swift */,
+				D3324E1222AC8F2B00F000F1 /* MtgColor.swift */,
 			);
 			path = MTGLifeCounter3;
 			sourceTree = "<group>";
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3324DFD22AB345500F000F1 /* AppDelegate.swift in Sources */,
+				D3324E1122AC8E1D00F000F1 /* DataStore.swift in Sources */,
 				D3324DFF22AB345500F000F1 /* SceneDelegate.swift in Sources */,
 				D3324E0122AB345500F000F1 /* MainMenuView.swift in Sources */,
+				D3324E1322AC8F2B00F000F1 /* MtgColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
