@@ -11,121 +11,7 @@ import Combine
 
 struct MainMenuView : View {
     var body: some View {
-        ThreePlayerView()
-    }
-}
-
-enum PlayerViewOrientation {
-    case normal, upsideDown, left, right
-    
-    func toAngle() -> Angle {
-        switch self {
-        case .normal: return Angle(degrees: 0)
-        case .upsideDown: return Angle(degrees: 180)
-        case .left: return Angle(degrees: 90)
-        case .right: return Angle(degrees: 270)
-        }
-    }
-}
-
-enum PlusMinusButtonPosition { // use nil for auto
-    case rightLeft, // + on the right, - on the left
-    leftRight,
-    aboveBelow, // + above, - below
-    belowAbove
-}
-
-struct MinusButton : View {
-    var body: some View {
-        Image(systemName: "minus").scaleEffect(0.5)
-    }
-}
-
-struct PlusButton : View {
-    var body: some View {
-        Image(systemName: "plus").scaleEffect(0.5)
-    }
-}
-
-struct PlayerForegroundView : View {
-    @State var lifeTotal: Int // TODO propagating life total changes through from the player view
-    let buttonPosition: PlusMinusButtonPosition
-    
-    var body: some View {
-        switch buttonPosition {
-        case .leftRight:
-            return AnyView(HStack(alignment: .center, spacing: 12) {
-                MinusButton()
-                Text(String(lifeTotal))
-                PlusButton()
-            })
-        case .rightLeft:
-            return AnyView(HStack(alignment: .center, spacing: 12) {
-                PlusButton()
-                Text(String(lifeTotal))
-                MinusButton()
-            })
-        case .aboveBelow:
-            return AnyView(VStack(alignment: .center, spacing: 0) {
-                PlusButton()
-                Text(String(lifeTotal))
-                MinusButton()
-            })
-        case .belowAbove:
-            return AnyView(VStack(alignment: .center, spacing: 0) {
-                MinusButton()
-                Text(String(lifeTotal))
-                PlusButton()
-            })
-        }
-    }
-}
-
-struct PlayerBackgroundView : View {
-    @State var color1: Color = .red
-    @State var color2: Color = .green
-    
-    var body: some View {
-        GeometryReader { (geometry) -> ShapeView<Rectangle, RadialGradient> in
-            let endRadius = max(geometry.size.width, geometry.size.height) * 1.3
-            
-            return Rectangle().fill(RadialGradient(
-                gradient: .init(colors: [self.color1, self.color2]),
-                center: .init(x: 0, y: 0),
-                startRadius: 0,
-                endRadius: endRadius))
-        }
-    }
-}
-
-
-struct PlayerView : View {
-    
-    @State var fontSize: Length = 120
-    
-    @ObjectBinding var player: Player
-    
-    let orientation: PlayerViewOrientation
-    let buttonPosition: PlusMinusButtonPosition
-    
-    init(player: Player, orientation: PlayerViewOrientation, buttonPosition: PlusMinusButtonPosition) {
-        self.player = player
-        self.orientation = orientation
-        self.buttonPosition = buttonPosition
-    }
-    
-    var body: some View {
-        ZStack {
-            PlayerBackgroundView()
-            PlayerForegroundView(lifeTotal: player.lifeTotal, buttonPosition: buttonPosition)
-        }
-        .font(.custom("Futura", size: fontSize))
-        .rotationEffect(orientation.toAngle())
-        .tapAction(onTapped)
-    }
-    
-    func onTapped() {
-        print("tapped")
+        StarView()
     }
 }
 
@@ -251,7 +137,7 @@ struct ThreePlayerView : View {
     }
 }
 
-struct StarPlayerView : View {
+struct StarView : View {
     
     var player1 = Player()
     var player2 = Player()
@@ -275,14 +161,30 @@ struct StarPlayerView : View {
     
     var body: some View {
         func landscapeView() -> AnyView {
-            AnyView(HStack(alignment: .center, spacing: 0) {
-                PlayerView(player: player1, orientation: .normal, buttonPosition: .leftRight)
+            AnyView(VStack(alignment: .center, spacing: 0) {
+                HStack(alignment: .center, spacing: 0) {
+                    PlayerView(player: player1, orientation: .upsideDown, buttonPosition: .leftRight)
+                    PlayerView(player: player2, orientation: .upsideDown, buttonPosition: .leftRight)
+                    PlayerView(player: player3, orientation: .upsideDown, buttonPosition: .leftRight)
+                }
+                HStack(alignment: .center, spacing: 0) {
+                    PlayerView(player: player4, orientation: .normal, buttonPosition: .leftRight)
+                    PlayerView(player: player5, orientation: .normal, buttonPosition: .leftRight)
+                }
             })
         }
         
         func portraitView() -> AnyView {
             AnyView(VStack(alignment: .center, spacing: 0) {
-                PlayerView(player: player1, orientation: .normal, buttonPosition: .leftRight)
+                PlayerView(player: player1, orientation: .normal, buttonPosition: .aboveBelow)
+                HStack(alignment: .center, spacing: 0) {
+                    PlayerView(player: player2, orientation: .normal, buttonPosition: .aboveBelow)
+                    PlayerView(player: player3, orientation: .normal, buttonPosition: .aboveBelow)
+                }
+                HStack(alignment: .center, spacing: 0) {
+                    PlayerView(player: player4, orientation: .normal, buttonPosition: .aboveBelow)
+                    PlayerView(player: player5, orientation: .normal, buttonPosition: .aboveBelow)
+                }
             })
         }
         

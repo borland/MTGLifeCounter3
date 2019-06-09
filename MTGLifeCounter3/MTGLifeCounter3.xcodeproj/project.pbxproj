@@ -15,6 +15,7 @@
 		D3324E0922AB345600F000F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3324E0722AB345600F000F1 /* LaunchScreen.storyboard */; };
 		D3324E1122AC8E1D00F000F1 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3324E1022AC8E1D00F000F1 /* DataStore.swift */; };
 		D3324E1322AC8F2B00F000F1 /* MtgColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3324E1222AC8F2B00F000F1 /* MtgColor.swift */; };
+		D3324E1522AC999900F000F1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3324E1422AC999900F000F1 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D3324E0A22AB345600F000F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3324E1022AC8E1D00F000F1 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		D3324E1222AC8F2B00F000F1 /* MtgColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MtgColor.swift; sourceTree = "<group>"; };
+		D3324E1422AC999900F000F1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				D3324E0422AB345600F000F1 /* Preview Content */,
 				D3324E1022AC8E1D00F000F1 /* DataStore.swift */,
 				D3324E1222AC8F2B00F000F1 /* MtgColor.swift */,
+				D3324E1422AC999900F000F1 /* PlayerView.swift */,
 			);
 			path = MTGLifeCounter3;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				D3324DFD22AB345500F000F1 /* AppDelegate.swift in Sources */,
 				D3324E1122AC8E1D00F000F1 /* DataStore.swift in Sources */,
 				D3324DFF22AB345500F000F1 /* SceneDelegate.swift in Sources */,
+				D3324E1522AC999900F000F1 /* PlayerView.swift in Sources */,
 				D3324E0122AB345500F000F1 /* MainMenuView.swift in Sources */,
 				D3324E1322AC8F2B00F000F1 /* MtgColor.swift in Sources */,
 			);
